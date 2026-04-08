@@ -6,4 +6,48 @@
     max-width: 90%;
     margin: 64px auto;
     color: #FFFFFF;
+
+    .form-title {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 125%;
+    }
+
+    .field-group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .field-group-list {
+        margin-top: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .form-label {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 120%;
+    }
+
+    .form-fiedlset {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .form-input {
+        border-radius: 8px;
+        background-color: transparent;
+        border: 1px solid #4A4949;
+        padding: 8px 16px;
+        color: #FFFFFF;
+    }
+
+    .form-input:focus {
+        outline: none;
+        border: 1px solid #FFFFFF;
+    }
 }
