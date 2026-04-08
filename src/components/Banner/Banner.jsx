@@ -3,10 +3,8 @@ import './Banner.css';
 
 export const Banner = () => {
     return (
-        <div className={'banner'}>
-            <section>
-                <img src={pageBanner} alt={'banner geral'}/>
-            </section>
-        </div>
+        <section className={'banner'}>
+            <img src={pageBanner} alt={'banner geral'}/>
+        </section>
     );
 }
