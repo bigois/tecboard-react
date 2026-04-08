@@ -1,4 +1,4 @@
-import pageLogo from '/logo.png'
+import pageLogo from '/logo.png';
 import './Navbar.css';
 
 export const Navbar = () => {
@@ -9,4 +9,4 @@ export const Navbar = () => {
             </header>
         </main>
     );
-}
+};

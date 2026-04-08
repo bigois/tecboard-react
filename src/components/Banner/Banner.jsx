@@ -1,4 +1,4 @@
-import pageBanner from '/banner.png'
+import pageBanner from '/banner.png';
 import './Banner.css';
 
 export const Banner = () => {
@@ -7,4 +7,4 @@ export const Banner = () => {
             <img src={pageBanner} alt={'banner geral'}/>
         </section>
     );
-}
+};
