@@ -1,7 +1,7 @@
-import {Navbar} from '../Navbar/Navbar.jsx';
-import {Banner} from '../Banner/Banner.jsx';
+import {Navbar} from '../Navbar/Navbar';
+import {Banner} from '../Banner/Banner';
 import {Form} from '../Form/Form';
-import './App.css'
+import './App.css';
 
 function App() {
     return (
