@@ -40,6 +40,9 @@ export const Form = (props) => {
                     </SpreadSelectProps>
                 </div>
             </fieldset>
+            <div className={'form-actions'}>
+                <button className={'form-button'}>Criar evento</button>
+            </div>
         </form>
     );
 };
