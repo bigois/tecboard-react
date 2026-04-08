@@ -8,7 +8,7 @@ function App() {
         <div className={'app'}>
             <Navbar/>
             <Banner/>
-            <Form>Preencha para criar um evento</Form>
+            <Form title='Qual o nome do evento?'>Preencha para criar um evento</Form>
         </div>
     )
 }
