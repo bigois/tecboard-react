@@ -15,7 +15,7 @@ const SpreadSelectProps = (props) => {
     return (
         <div className={'field-group'}>
             <label className={'form-label'} htmlFor={props.id}>{props.title}</label>
-            <select {...props} defaultValue={0}>{props.children}</select>
+            <select {...props} defaultValue={''} required>{props.children}</select>
         </div>
     );
 };
@@ -35,7 +35,7 @@ export const Form = (props) => {
                     <SpreadInputProps className={'form-input'} type={'date'} id={'date'} name={'date'}
                                       placeholder={'XX/XX/XXXX'} title={'Data do evento'}/>
                     <SpreadSelectProps id={'theme'} name={'theme'} className={'form-input'} title={'Tema do evento'}>
-                        <option key={0} value={0} disabled>Selecione uma opção</option>
+                        <option key={0} value='' disabled>Selecione uma opção</option>
                         {
                             subjectList.map((subject) => (
                                 <option key={subject.id} value={subject.id} className={'form-option'}>{subject.name.toUpperCase()}</option>
