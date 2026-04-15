@@ -6,16 +6,18 @@ const Subject = ({title, cards}) => {
     return (
         <section className={'subject'}>
             <h3 className={'title'}>{title}</h3>
-            {
-                cards.map((card, index) => {
-                    return <Card thumb={card.thumb}
-                                 subject={title}
-                                 date={card.date}
-                                 title={card.title}
-                                 description={card.description}
-                                 key={index}/>;
-                })
-            }
+            <div className={'container'}>
+                {
+                    cards.map((card, index) => {
+                        return <Card thumb={card.thumb}
+                                     subject={title}
+                                     date={card.date}
+                                     title={card.title}
+                                     description={card.description}
+                                     key={index}/>;
+                    })
+                }
+            </div>
         </section>
     );
 };

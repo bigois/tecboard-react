@@ -4,8 +4,12 @@
     flex-direction: column;
     width: 282px;
     color: var(--color-text);
+    border-radius: 8px;
+    overflow: hidden;  /* ← Faz os filhos respeitarem o border-radius */
+    flex: 0 0 calc(20% - 20px);  /* ← Isso faz ficar 4 por linha */
 
-    .subject {
+    .theme {
+        margin-bottom: 4px;
         text-transform: uppercase;
         background-color: var(--color-border);
         border-radius: 4px;
