@@ -7,18 +7,6 @@
     margin: 64px auto;
     color: var(--color-text);
 
-    /* Gambiarra para o Chrome para de alterar a cor de fundo ao usar o autocomplete */
-    .form-input:-webkit-autofill,
-    .form-input:-webkit-autofill:hover,
-    .form-input:-webkit-autofill:focus,
-    .form-input:-webkit-autofill:active {
-        -webkit-box-shadow: 0 0 0px 1000px var(--color-background) inset !important;
-        -webkit-text-fill-color: var(--color-text) !important;
-        box-shadow: 0 0 0px 1000px var(--color-background) inset !important;
-        color: white;
-        transition: background-color 9999s ease-in-out 0s;
-    }
-
     .form-title {
         font-weight: 400;
         font-size: 20px;

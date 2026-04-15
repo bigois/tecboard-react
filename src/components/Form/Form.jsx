@@ -6,7 +6,7 @@ const SpreadInputProps = (props) => {
     return (
         <div className={'field-group'}>
             <label className={'form-label'} htmlFor={props.id}>{props.title}</label>
-            <input {...props}/>
+            <input {...props} autoComplete="off" required/>
         </div>
     );
 };
