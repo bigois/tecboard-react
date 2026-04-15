@@ -20,10 +20,23 @@ const SpreadSelectProps = (props) => {
     );
 };
 
+const handleForm = (event) => {
+    // Impede o comportamento padrão e permitir que o React capture os dados
+    event.preventDefault();
+
+    // Converte os dados do formulário em um objeto
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData);
+    console.log(data);
+
+    // Limpa o formulário
+    event.target.reset();
+};
+
 // 2. Passagem de properiedades via children
 export const Form = (props) => {
     return (
-        <form className={'form'}>
+        <form className={'form'} onSubmit={handleForm}>
             <legend className={'form-title'}>{props.children}</legend>
             <fieldset className={'form-fiedlset'}>
                 {/* 3. Passagem de properiedades via props */}
