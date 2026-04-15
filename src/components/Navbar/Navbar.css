@@ -1,6 +1,6 @@
 .navbar {
     header {
-        background-color: #06151A;
+        background-color: var(--color-page-bg);
         padding: 32px;
         display: flex;
         justify-content: center;

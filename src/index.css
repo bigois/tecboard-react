@@ -1,7 +1,15 @@
+:root {
+    --color-background: #212121;      /* Cor escura/fundo dos componentes */
+    --color-border: #4A4949;          /* Cor da borda */
+    --color-text: #FFFFFF;            /* Cor branca/texto */
+    --color-primary: #17D9B1;         /* Cor principal/verde */
+    --color-page-bg: #06151A;         /* Cor de fundo da página */
+}
+
 * {
     font-family: "Work Sans", sans-serif;
 }
 
 body {
-    background-color: #06151A;
+    background-color: var(--color-page-bg);
 }

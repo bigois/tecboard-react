@@ -1,11 +1,23 @@
 .form {
-    background-color: #212121;
+    background-color: var(--color-background);
     padding: 32px 28px;
     border-radius: 16px;
     width: 384px;
     max-width: 90%;
     margin: 64px auto;
-    color: #FFFFFF;
+    color: var(--color-text);
+
+    /* Gambiarra para o Chrome para de alterar a cor de fundo ao usar o autocomplete */
+    .form-input:-webkit-autofill,
+    .form-input:-webkit-autofill:hover,
+    .form-input:-webkit-autofill:focus,
+    .form-input:-webkit-autofill:active {
+        -webkit-box-shadow: 0 0 0px 1000px var(--color-background) inset !important;
+        -webkit-text-fill-color: var(--color-text) !important;
+        box-shadow: 0 0 0px 1000px var(--color-background) inset !important;
+        color: white;
+        transition: background-color 9999s ease-in-out 0s;
+    }
 
     .form-title {
         font-weight: 400;
@@ -40,15 +52,15 @@
 
     .form-input {
         border-radius: 8px;
-        background-color: transparent;
-        border: 1px solid #4A4949;
+        background-color: var(--color-background);
+        border: 1px solid var(--color-border);
         padding: 8px 16px;
-        color: #FFFFFF;
+        color: var(--color-text);
     }
 
     .form-input:focus {
         outline: none;
-        border: 1px solid #FFFFFF;
+        border: 1px solid var(--color-text);
     }
 
     .form-actions {
@@ -61,9 +73,9 @@
         font-weight: 600;
         font-size: 16px;
         line-height: 120%;
-        color: #212121;
+        color: var(--color-background);
         padding: 8px 16px;
-        background-color: #17D9B1;
+        background-color: var(--color-primary);
         border-radius: 8px;
         border: none;
         margin-top: 32px;

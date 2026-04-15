@@ -1,13 +1,13 @@
 .card {
-    background-color: #212121;
+    background-color: var(--color-background);
     display: flex;
     flex-direction: column;
     width: 282px;
-    color: #FFFFFF;
+    color: var(--color-text);
 
     .subject {
         text-transform: uppercase;
-        background-color: #4A4949;
+        background-color: var(--color-border);
         border-radius: 4px;
         padding: 8px 16px;
         font-family: 'Orbitron', sans-serif;
