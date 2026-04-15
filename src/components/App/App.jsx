@@ -3,13 +3,17 @@ import {Banner} from '../Banner/Banner';
 import {Form} from '../Form/Form';
 import {Subjects} from '../Subjects/Subjects';
 import './App.css';
+import {useState} from 'react';
+import {subjectList} from '../../services/subjectsService';
 
 function App() {
+    const [subjectData, setSubjectData] = useState(subjectList);
+
     return (
         <div className={'app'}>
             <Navbar/>
             <Banner/>
-            <Form title='Qual o nome do evento?'>Preencha para criar um evento:</Form>
+            <Form data={subjectData} setData={setSubjectData}>Preencha para criar um evento:</Form>
             <Subjects/>
         </div>
     );

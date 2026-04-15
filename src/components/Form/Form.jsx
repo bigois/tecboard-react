@@ -1,5 +1,4 @@
 import './Form.css';
-import {subjectList} from '../../services/subjectsService';
 
 // 1. Passagem de properiedades via spread operator
 const SpreadInputProps = (props) => {
@@ -20,37 +19,49 @@ const SpreadSelectProps = (props) => {
     );
 };
 
-const handleForm = (event) => {
+const handleForm = (event, setData) => {
     // Impede o comportamento padrão e permitir que o React capture os dados
     event.preventDefault();
 
     // Converte os dados do formulário em um objeto
     const formData = new FormData(event.target);
-    const data = Object.fromEntries(formData);
-    console.log(data);
+    const entries = Object.fromEntries(formData);
+
+    // Excluí a propriedade theme e adiciona o restante no array de cards
+    const {theme, date, ...newEvent} = entries;
+    const dateObj = new Date(date);
+
+    // Por fim, captura o estado anterior, adiciona o novo evento e atualiza o estado com a nova lista de dados
+    setData(oldData => {
+        const newDataList = [...oldData];
+        newDataList[parseInt(theme) - 1].cards.push({...newEvent, date: dateObj});
+        return newDataList;
+    });
 
     // Limpa o formulário
     event.target.reset();
 };
 
 // 2. Passagem de properiedades via children
-export const Form = (props) => {
+export const Form = ({children, data, setData}) => {
     return (
-        <form className={'form'} onSubmit={handleForm}>
-            <legend className={'form-title'}>{props.children}</legend>
+        <form className={'form'} onSubmit={(event) => handleForm(event, setData)}>
+            <legend className={'form-title'}>{children}</legend>
             <fieldset className={'form-fiedlset'}>
                 {/* 3. Passagem de properiedades via props */}
                 <div className={'field-group-list'}>
-                    <SpreadInputProps className={'form-input'} type={'text'} id={'name'} name={'name'}
+                    <SpreadInputProps className={'form-input'} type={'text'} id={'title'} name={'title'}
                                       placeholder={'Summer Dev Hits'} title={'Nome do evento'}/>
-                    <SpreadInputProps className={'form-input'} type={'url'} id={'url'} name={'url'}
+                    <SpreadInputProps className={'form-input'} type={'text'} id={'description'} name={'description'}
+                                      placeholder={'Evento de tecnologia para todas as idades.'} title={'Descrição do evento'}/>
+                    <SpreadInputProps className={'form-input'} type={'url'} id={'thumb'} name={'thumb'}
                                       placeholder={'https:// [...]'} title={'URL da capa'}/>
                     <SpreadInputProps className={'form-input'} type={'date'} id={'date'} name={'date'}
                                       placeholder={'XX/XX/XXXX'} title={'Data do evento'}/>
                     <SpreadSelectProps id={'theme'} name={'theme'} className={'form-input'} title={'Tema do evento'}>
                         <option key={0} value='' disabled>Selecione uma opção</option>
                         {
-                            subjectList.map((subject) => (
+                            data.map((subject) => (
                                 <option key={subject.id} value={subject.id} className={'form-option'}>{subject.name.toUpperCase()}</option>
                             ))
                         }
