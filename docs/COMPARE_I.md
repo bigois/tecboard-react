@@ -93,16 +93,16 @@ Importa módulos inteiros.
 tecboard/
 ├── src/
 │   ├── main.jsx
-│   ├── App.jsx
-│   ├── App.css
+│   ├── Index.jsx
+│   ├── Index.css
 │   ├── index.css
 │   ├── assets/
 │   │   ├── react.svg
 │   │   ├── vite.svg
 │   │   └── hero.png
 │   └── components/
-│       └── App/
-│           └── App.jsx
+│       └── Index/
+│           └── index.jsx
 ├── public/
 │   ├── favicon.svg
 │   └── icons.svg
@@ -114,8 +114,8 @@ tecboard/
 **ConditionalRender:**
 ```
 conditionalRender/
-├── App/
-│   └── App.jsx
+├── Index/
+│   └── Index.jsx
 ├── global.css
 ├── index.html
 ├── index.jsx

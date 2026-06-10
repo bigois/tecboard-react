@@ -41,7 +41,7 @@ tecboard/
 |   |-- logo.png
 |-- src/
 |   |-- components/
-|   |   |-- App/
+|   |   |-- Index/
 |   |   |-- Banner/
 |   |   |-- Card/
 |   |   |-- Form/

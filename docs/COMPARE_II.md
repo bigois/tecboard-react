@@ -96,8 +96,8 @@ files: ['**/*.{js,jsx}'],
 **Tradução**: "Verifique TODOS (asteriscos) os arquivos que terminam em `.js` ou `.jsx`"
 
 **Exemplos de arquivos que serão verificados:**
-- `src/App.jsx` ✅
-- `src/main.js` ✅
+- `src/Index.jsx` ✅
+- `src/main.jsx` ✅
 - `components/Button.jsx` ✅
 - `src/styles.css` ❌ (não termina em .js ou .jsx)
 
@@ -204,12 +204,12 @@ Diz ao ESLint: "Este código usa JSX, então reconheça tags como `<Button />`"
 
 ```javascript
 // ✅ ESLint entende que isto é JSX
-function App() {
+function Index() {
     return <h1>Olá</h1>
 }
 
 // ❌ Sem `jsx: true`, ESLint reclama
-function App() {
+function Index() {
     return <h1>Olá</h1>  // "O que é isso? Não entendo!"
 }
 ```
@@ -221,7 +221,8 @@ Significa: "Este projeto usa módulos ES6 (import/export)"
 ```javascript
 // ✅ Permitido com sourceType: 'module'
 import React from 'react'
-export default App
+
+export default Index
 
 // ❌ Sem sourceType: 'module', ESLint reclama
 import React from 'react'  // "Não entendo import/export!"
@@ -332,12 +333,12 @@ São **manuais de instruções** para o TypeScript:
 ```javascript
 import React from "react"
 
-function App({ contador }) {
+function Index({ contador }) {
     return <div>{contador.valor}</div>  // Pode dar erro em runtime!
 }
 
 // Alguém passa mal:
-<App contador="não é um objeto" />
+<Index contador="não é um objeto" />
 // Só vai dar erro quando rodar no navegador!
 ```
 
@@ -351,12 +352,12 @@ interface Props {
     }
 }
 
-function App({ contador }: Props) {
+function Index({ contador }: Props) {
     return <div>{contador.valor}</div>
 }
 
 // Antes mesmo de rodar:
-<App contador="não é um objeto" />  // ❌ ERRO DETECTADO NO EDITOR!
+<Index contador="não é um objeto" />  // ❌ ERRO DETECTADO NO EDITOR!
 ```
 
 ---
@@ -423,7 +424,7 @@ npm run lint
 
 **E ESLint verifica seu código:**
 ```
-✓ src/App.jsx - 0 errors
+✓ src/Index.jsx - 0 errors
 ✓ src/main.jsx - 0 errors
 ✓ components/Button.jsx - 2 errors:
   - Line 5: Variable 'unused' is assigned but never used
@@ -447,15 +448,15 @@ npm run lint
 tecboard/
 ├── src/                    ← Todo código fica aqui
 │   ├── components/         ← Componentes React
-│   │   └── App/
-│   │       └── App.jsx
+│   │   └── Index/
+│   │       └── index.jsx
 │   ├── assets/             ← Imagens, SVGs, etc
 │   │   ├── react.svg
 │   │   ├── vite.svg
 │   │   └── hero.png
-│   ├── App.jsx             ← Componente principal
+│   ├── Index.jsx             ← Componente principal
 │   ├── main.jsx            ← Arquivo de entrada
-│   ├── App.css             ← Estilos do App
+│   ├── Index.css             ← Estilos do Index
 │   └── index.css           ← Estilos globais
 ├── public/                 ← Arquivos estáticos
 │   ├── favicon.svg
@@ -469,8 +470,8 @@ tecboard/
 ### ConditionalRender (Simples)
 ```
 conditionalRender/
-├── App/                    ← Pasta de componentes
-│   └── App.jsx
+├── Index/                    ← Pasta de componentes
+│   └── Index.jsx
 ├── global.css              ← Estilos
 ├── index.html
 ├── index.jsx               ← Arquivo de entrada
@@ -601,12 +602,12 @@ Imagine você entregando um produto para alguém:
 // src/main.jsx
 import {StrictMode} from 'react'
 import {createRoot} from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+import './main.css'
+import Index from './index.jsx'
 
 createRoot(document.getElementById('root')).render(
     <StrictMode>
-        <App/>
+        <Index/>
     </StrictMode>,
 )
 ```
@@ -617,12 +618,12 @@ createRoot(document.getElementById('root')).render(
 // index.jsx
 import React from "react"
 import ReactDOM from "react-dom/client"
-import App from "./App/App"
+import Index from "./Index/Index"
 
 const root = document.getElementById("root")
 ReactDOM.createRoot(root).render(
     <React.StrictMode>
-        <App/>
+        <Index/>
     </React.StrictMode>
 )
 ```
